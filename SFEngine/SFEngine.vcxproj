@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5EC8F716-8117-4AAB-A7DC-237EC5002246}</ProjectGuid>
+    <RootNamespace>SFEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Projets\SFML-2.3.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_DYNAMIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Projets\SFML-2.3.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Projets\SFML-2.3.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\Projets\SFML-2.3.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-audio.lib;sfml-system.lib;sfml-window.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\headers\Application.hpp" />
+    <ClInclude Include="src\headers\commands\Command.hpp" />
+    <ClInclude Include="src\headers\commands\CommandQueue.hpp" />
+    <ClInclude Include="src\headers\entities\Entity.hpp" />
+    <ClInclude Include="src\headers\entities\Pickup.hpp" />
+    <ClInclude Include="src\headers\entities\Projectile.hpp" />
+    <ClInclude Include="src\headers\graphics\Animation.hpp" />
+    <ClInclude Include="src\headers\graphics\BloomEffect.hpp" />
+    <ClInclude Include="src\headers\graphics\Particle.hpp" />
+    <ClInclude Include="src\headers\graphics\PostEffect.hpp" />
+    <ClInclude Include="src\headers\gui\Button.hpp" />
+    <ClInclude Include="src\headers\gui\Component.hpp" />
+    <ClInclude Include="src\headers\gui\Container.hpp" />
+    <ClInclude Include="src\headers\gui\Label.hpp" />
+    <ClInclude Include="src\headers\Player.hpp" />
+    <ClInclude Include="src\headers\scene\EmitterNode.hpp" />
+    <ClInclude Include="src\headers\scene\ParticleNode.hpp" />
+    <ClInclude Include="src\headers\scene\SceneNode.hpp" />
+    <ClInclude Include="src\headers\scene\SoundNode.hpp" />
+    <ClInclude Include="src\headers\scene\SpriteNode.hpp" />
+    <ClInclude Include="src\headers\scene\TextNode.hpp" />
+    <ClInclude Include="src\headers\sound\MusicPlayer.hpp" />
+    <ClInclude Include="src\headers\sound\SoundPlayer.hpp" />
+    <ClInclude Include="src\headers\states\GameOverState.hpp" />
+    <ClInclude Include="src\headers\states\GameState.hpp" />
+    <ClInclude Include="src\headers\states\LoadingState.hpp" />
+    <ClInclude Include="src\headers\states\MenuState.hpp" />
+    <ClInclude Include="src\headers\states\PauseState.hpp" />
+    <ClInclude Include="src\headers\states\SettingsState.hpp" />
+    <ClInclude Include="src\headers\states\State.hpp" />
+    <ClInclude Include="src\headers\states\StateIdentifiers.hpp" />
+    <ClInclude Include="src\headers\states\StateStack.hpp" />
+    <ClInclude Include="src\headers\states\TitleState.hpp" />
+    <ClInclude Include="src\headers\util\Category.hpp" />
+    <ClInclude Include="src\headers\util\DataTable.hpp" />
+    <ClInclude Include="src\headers\util\foreach.hpp" />
+    <ClInclude Include="src\headers\util\ParallelTask.hpp" />
+    <ClInclude Include="src\headers\util\ResourceHolder.hpp" />
+    <ClInclude Include="src\headers\util\ResourceIdentifier.hpp" />
+    <ClInclude Include="src\headers\util\Utility.hpp" />
+    <ClInclude Include="src\headers\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\source\Application.cpp" />
+    <ClCompile Include="src\source\commands\Command.cpp" />
+    <ClCompile Include="src\source\commands\CommandQueue.cpp" />
+    <ClCompile Include="src\source\entities\Entity.cpp" />
+    <ClCompile Include="src\source\entities\Pickup.cpp" />
+    <ClCompile Include="src\source\entities\Projectile.cpp" />
+    <ClCompile Include="src\source\graphics\Animation.cpp" />
+    <ClCompile Include="src\source\graphics\BloomEffect.cpp" />
+    <ClCompile Include="src\source\graphics\PostEffect.cpp" />
+    <ClCompile Include="src\source\gui\Button.cpp" />
+    <ClCompile Include="src\source\gui\Component.cpp" />
+    <ClCompile Include="src\source\gui\Container.cpp" />
+    <ClCompile Include="src\source\gui\Label.cpp" />
+    <ClCompile Include="src\source\Player.cpp" />
+    <ClCompile Include="src\source\scene\EmitterNode.cpp" />
+    <ClCompile Include="src\source\scene\ParticleNode.cpp" />
+    <ClCompile Include="src\source\scene\SceneNode.cpp" />
+    <ClCompile Include="src\source\scene\SoundNode.cpp" />
+    <ClCompile Include="src\source\scene\SpriteNode.cpp" />
+    <ClCompile Include="src\source\scene\TextNode.cpp" />
+    <ClCompile Include="src\source\sound\MusicPlayer.cpp" />
+    <ClCompile Include="src\source\sound\SoundPlayer.cpp" />
+    <ClCompile Include="src\source\states\GameOverState.cpp" />
+    <ClCompile Include="src\source\states\GameState.cpp" />
+    <ClCompile Include="src\source\states\LoadingState.cpp" />
+    <ClCompile Include="src\source\states\MenuState.cpp" />
+    <ClCompile Include="src\source\states\PauseState.cpp" />
+    <ClCompile Include="src\source\states\SettingsState.cpp" />
+    <ClCompile Include="src\source\states\State.cpp" />
+    <ClCompile Include="src\source\states\StateStack.cpp" />
+    <ClCompile Include="src\source\states\TitleState.cpp" />
+    <ClCompile Include="src\source\util\DataTable.cpp" />
+    <ClCompile Include="src\source\util\ParallelTask.cpp" />
+    <ClCompile Include="src\source\util\Utility.cpp" />
+    <ClCompile Include="src\source\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="openal32.dll" />
+    <None Include="sfml-audio-d-2.dll" />
+    <None Include="sfml-graphics-d-2.dll" />
+    <None Include="sfml-system-d-2.dll" />
+    <None Include="sfml-window-d-2.dll" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
